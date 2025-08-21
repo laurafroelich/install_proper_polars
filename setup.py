@@ -1,15 +1,12 @@
+import cpuinfo
 from setuptools import setup
 
 
 def get_polars():
-    try:
-        import cpuinfo
-    except ModuleNotFoundError:
-        return "polars"
     info = cpuinfo.get_cpu_info()
-    if info["arch"] != "X86_64":
-        return "polars"
-    if set(["avx2", "bmi2", "movbe"]) <= set(info["flags"]):
+    if info["arch"] == "X86_64":
+        return "polars-lts-cpu"
+    if {"avx2", "bmi2", "movbe"} <= set(info["flags"]):
         return "polars"
     else:
         return "polars-lts-cpu"
