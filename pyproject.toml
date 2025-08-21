@@ -1,6 +1,6 @@
 [project]
 name = "install-proper-polars"
-version = "0.1.2"
+version = "0.1.3"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -10,3 +10,7 @@ dependencies = [
     "setuptools>=80.9.0",
     "wheel>=0.45.1",
 ]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
