@@ -34,5 +34,5 @@ jobs:
         uv sync --locked
 
     - name: Run main
-      run: :
+      run: |
         uv run main.py
