@@ -4,12 +4,15 @@ from setuptools import setup
 
 def get_polars():
     info = cpuinfo.get_cpu_info()
+    polars_package = "undefined"
     if info["arch"] == "X86_64":
-        return "polars-lts-cpu"
+        polars_package = "polars-lts-cpu"
     if {"avx2", "bmi2", "movbe"} <= set(info["flags"]):
-        return "polars"
+        polars_package = "polars"
     else:
-        return "polars-lts-cpu"
+        polars_package = "polars-lts-cpu"
+    print(f'determined {polars_package}')
+    return polars_package
 
 
 
