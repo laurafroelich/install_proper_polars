@@ -32,7 +32,7 @@ jobs:
       run: |
         # poetry install --extras test
         # uv sync --locked
-        pip install .
+        python -m pip install .
 
     - name: Run main
       run: |
