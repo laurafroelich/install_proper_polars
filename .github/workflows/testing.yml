@@ -31,8 +31,10 @@ jobs:
     - name: Install dependencies
       run: |
         # poetry install --extras test
-        uv sync --locked
+        # uv sync --locked
+        pip install .
 
     - name: Run main
       run: |
-        uv run main.py
+        # uv run main.py
+        python main.py
