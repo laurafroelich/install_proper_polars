@@ -6,7 +6,8 @@ readme = "README.md"
 requires-python = ">=3.11"
 dynamic = ["authors"]
 dependencies = [
-    "polars; platform_machine=='x86_64 or AMD64'",
+    "polars; platform_machine=='x86_64' or platform_machine == 'AMD64'",
+    # "polars; platform_machine=='x86_64 or AMD64'",
     "polars-lts-cpu; platform_machine=='ARM64'"
 ]
 
