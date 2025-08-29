@@ -32,14 +32,18 @@ jobs:
       run: |
         # poetry install --extras test
         # uv sync --locked
+        python -m venv .venv
+        source .venv/bin/activate
         python -m pip install .
 
     - name: Run say_hello
       run: |
         # uv run main.py
+        source .venv/bin/activate
         python say_hello.py
 
     - name: Run main
       run: |
         # uv run main.py
+        source .venv/bin/activate
         python main.py
